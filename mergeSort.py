@@ -1,9 +1,13 @@
 # Python program for implementation of MergeSort
 def mergeSort(arr):
+    print("nilai arr ", arr)
     if len(arr) > 1:
         mid = len(arr) // 2 #Finding the mid of the array
         L = arr[:mid] # Dividing the array elements
         R = arr[mid:] # into 2 halves
+
+        print("L ", L)
+        print("R ", R)
 
         mergeSort(L)
         mergeSort(R)
@@ -12,6 +16,7 @@ def mergeSort(arr):
 
         # Copy data to temp arrays L[] and R[]
 
+        print("arr sebelum di assign ", arr)
         while i < len(L) and j < len(R):
             if L[i] < R[j]:
                 arr[k] = L[i]
@@ -21,6 +26,8 @@ def mergeSort(arr):
                 j+= 1
             k += 1
         
+        print("arr setelah di assign ", arr)
+
         # Checking if any element was left
         while i < len(L):
             arr[k] = L[i]
@@ -34,6 +41,7 @@ def mergeSort(arr):
 
 def printList(arr):
     for item in arr:
+        # yield item
         print(item, end= " ")
     print()
 
